@@ -13,15 +13,19 @@
         <?php
           $password = $_POST["password"];
           $lower = "abcdefghijklmnopqrstuvwxyz";
+          $contains = 0;
           for($x = 0; $x < strlen($password); $x++) {
             for($y = 0; $y < strlen($lower); $y++) {
               if($password[$x] == $lower[$y]) {
                 echo ✓;
+                $contains = 1;
                 break 2;
               };
             };
           };
-          echo ✗;
+          if($contains == 0) {
+            echo ✗;
+          };
         ?>
       </td>
     </tr>
@@ -31,15 +35,19 @@
         <?php
           $password = $_POST["password"];
           $upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+          $contains = 0;
           for($x = 0; $x < strlen($password); $x++) {
             for($y = 0; $y < strlen($upper); $y++) {
               if($password[$x] == $upper[$y]) {
                 echo ✓;
+                $contains = 1;
                 break 2;
               };
             };
           };
-          echo ✗;
+          if($contains == 0) {
+            echo ✗;
+          };
         ?>
       </td>
     </tr>
@@ -49,15 +57,19 @@
         <?php
           $password = $_POST["password"];
           $numbers = "0123456789";
+          $contains = 0;
           for($x = 0; $x < strlen($password); $x++) {
             for($y = 0; $y < strlen($numbers); $y++) {
               if($password[$x] == $numbers[$y]) {
                 echo ✓;
+                $contains = 1;
                 break 2;
               };
             };
           };
-          echo ✗;
+          if($contains == 0) {
+            echo ✗;
+          };
         ?>
       </td>
     </tr>
@@ -66,6 +78,7 @@
       <td>
         <?php
           $password = $_POST["password"];
+          $contains = 0;
           for($x = 0; $x < strlen($password); $x++) {
             for($y = 0; $y <= 255; $y++) {
               if((65 <= $y and $y <= 90) or (97 <= $y and $y <= 122)) {
@@ -73,11 +86,14 @@
               };
               if(ord($password[$x]) == $y) {
                 echo ✓;
+                $contains = 1;
                 break 2;
               };
             };
           };
-          echo ✗;
+          if($contains == 0) {
+            echo ✗;
+          };
         ?>
       </td>
     </tr>
