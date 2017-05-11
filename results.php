@@ -33,7 +33,6 @@
       <td>Innehåller stora bokstäver:</td>
       <td>
         <?php
-          $password = $_POST["password"];
           $upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
           $contains = 0;
           for($x = 0; $x < strlen($password); $x++) {
@@ -55,7 +54,6 @@
       <td>Innehåller siffror:</td>
       <td>
         <?php
-          $password = $_POST["password"];
           $numbers = "0123456789";
           $contains = 0;
           for($x = 0; $x < strlen($password); $x++) {
@@ -77,7 +75,6 @@
       <td>Innehåller symboler:</td>
       <td>
         <?php
-          $password = $_POST["password"];
           $contains = 0;
           for($x = 0; $x < strlen($password); $x++) {
             for($y = 0; $y <= 255; $y++) {
