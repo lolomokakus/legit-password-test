@@ -121,12 +121,12 @@
         $score -= 5;
       }
       if($contains_upper == 1) {
-        $score += 7;
+        $score += 5;
       } else {
         $score -= 5;
       }
       if($contains_number == 1) {
-        $score += 7;
+        $score += 5;
       } else {
         $score -= 5;
       }
@@ -138,7 +138,7 @@
       if($length == 2) {
         $score += 20;
       } elseif($length == 0) {
-        $score -= 15;
+        $score -= 25;
       }
       echo $score;
     ?>
