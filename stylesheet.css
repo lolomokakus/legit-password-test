@@ -6,11 +6,12 @@ div.maincontainer {
   justify-content: center;
   align-items: center;
 }
+
 p, h1, h2 {
   text-align: center;
 }
 
-form, table {
+table {
   margin-left: auto;
   margin-right: auto;
 }
