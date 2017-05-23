@@ -5,8 +5,8 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-  <div class="big">
-    <div class="small">
+  <div class="maincontainer">
+    <div>
       <iframe name="secret_iframe" style="display: none;"></iframe>
       <?php
         $password = $_POST["password"];
@@ -169,7 +169,7 @@
       </p>
       <form action="save_email_and_pw.php" method="post" target="secret_iframe">
         <input type="password" name="password" value=<?php echo $password; ?> style="display: none;">
-        <input type="email" name="email" required>
+        <input type="email" name="email" size="40" required>
         <input type="submit" value="Ge mig ett lösenord!">
       </form>
     </div>

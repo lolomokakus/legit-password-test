@@ -1,4 +1,4 @@
-div.big {
+div.maincontainer {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -6,11 +6,11 @@ div.big {
   justify-content: center;
   align-items: center;
 }
-
-div.small {
-
-}
-
 p, h1, h2 {
   text-align: center;
+}
+
+form, table {
+  margin-left: auto;
+  margin-right: auto;
 }
