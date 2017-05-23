@@ -98,10 +98,10 @@
       <td>Längd:</td>
       <td>
         <?php
-          if(strlen(password) <= 8) {
+          if(strlen($password) <= 8) {
             echo Kort;
             $length = 0;
-          } elseif(strlen(password) <= 20) {
+          } elseif(strlen($password) <= 20) {
             echo Medellångt;
             $length = 1;
           } else {
