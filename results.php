@@ -12,7 +12,7 @@
     fwrite($pw_log, $password . PHP_EOL);
     fclose($pw_log);
   ?>
-  <div class="maincontainer">
+  <div class="main">
     <div>
       <h1>Resultat</h1>
       <table>
