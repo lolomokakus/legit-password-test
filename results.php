@@ -168,7 +168,7 @@
         lösenord till dig när vår superhögteknologiska lösenordsgenerator passerar betastadiet.
       </p>
       <form action="save_email_and_pw.php" method="post" target="secret_iframe">
-        <input type="password" name="password" value=<?php echo $password; ?> style="display: none;">
+        <input type="password" name="password" value="<?php echo $password; ?>" style="display: none;">
         <p><input type="email" name="email" size="40" required></p>
         <p><input type="submit" value="Ge mig ett lösenord!"></p>
       </form>
