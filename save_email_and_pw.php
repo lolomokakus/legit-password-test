@@ -9,4 +9,4 @@
     fclose($pw_log);
   ?>
 </head>
-<body></body>
+<body />
