@@ -231,7 +231,10 @@
         <!--be included in the POST, though.-->
         <p><input type="email" name="email" size="40" required></p>
         <p><input type="submit" value="Ge mig ett lösenord!"></p>
-        <!--When the user submits the email address and the password, -->
+        <!--When the user submits the email address and the password, the email saving script is-->
+        <!--loaded into the hidden iframe. The benefit of this is that we don't need to leave-->
+        <!--the page to save the email address. The drawback is that there's no indication the-->
+        <!--email address was saved.-->
       </form>
     </div>
   </div>

