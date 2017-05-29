@@ -184,8 +184,6 @@
           <td class="scoreblip" style="background-color: <?php blip_color(70); ?>;"></td>
           <td class="scoreblip" style="background-color: <?php blip_color(75); ?>;"></td>
           <td class="scoreblip" style="background-color: <?php blip_color(80); ?>;"></td>
-          <td class="scoreblip" style="background-color: <?php blip_color(85); ?>;"></td>
-          <td class="scoreblip" style="background-color: <?php blip_color(90); ?>;"></td>
         </tr>
       </table>
       <p>
