@@ -33,7 +33,7 @@ table.scorebar {
 }
 
 td.scoreblip {
-  height: 50px;
+  height: 20px;
   width: auto;
   border: 1px solid black;
   background-color: #a5a5a5;

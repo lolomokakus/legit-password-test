@@ -7,6 +7,7 @@
 <body>
   <?php
     function blip_color($min_score) {
+      global $score;
       if($score >= $min_score) {
         if($score < -15) {
           echo "#fc291e";
