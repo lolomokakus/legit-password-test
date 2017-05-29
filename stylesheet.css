@@ -29,12 +29,12 @@ table {
 table.scorebar {
   width: 40%;
   border-collapse: collapse;
-  border: 1px solid black;
+  border: 1px solid #a5a5a5;
 }
 
 td.scoreblip {
   height: 20px;
   width: auto;
-  border: 1px solid black;
+  border: 1px solid #a5a5a5;
   background-color: #a5a5a5;
 }
