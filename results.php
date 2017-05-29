@@ -136,7 +136,7 @@
       </table>
       <h2>
         Poäng: <?php
-          $score = 0;
+          $score = 35;
           if($contains_lower) {
             $score += 5;
           } else {
@@ -167,15 +167,6 @@
       </h2>
       <table class="scorebar">
         <tr>
-          <td class="scoreblip" style="background-color: <?php blip_color(-45); ?>;"></td>
-          <td class="scoreblip" style="background-color: <?php blip_color(-40); ?>;"></td>
-          <td class="scoreblip" style="background-color: <?php blip_color(-35); ?>;"></td>
-          <td class="scoreblip" style="background-color: <?php blip_color(-30); ?>;"></td>
-          <td class="scoreblip" style="background-color: <?php blip_color(-25); ?>;"></td>
-          <td class="scoreblip" style="background-color: <?php blip_color(-20); ?>;"></td>
-          <td class="scoreblip" style="background-color: <?php blip_color(-15); ?>;"></td>
-          <td class="scoreblip" style="background-color: <?php blip_color(-10); ?>;"></td>
-          <td class="scoreblip" style="background-color: <?php blip_color(-5); ?>;"></td>
           <td class="scoreblip" style="background-color: <?php blip_color(0); ?>;"></td>
           <td class="scoreblip" style="background-color: <?php blip_color(5); ?>;"></td>
           <td class="scoreblip" style="background-color: <?php blip_color(10); ?>;"></td>
@@ -186,6 +177,15 @@
           <td class="scoreblip" style="background-color: <?php blip_color(35); ?>;"></td>
           <td class="scoreblip" style="background-color: <?php blip_color(40); ?>;"></td>
           <td class="scoreblip" style="background-color: <?php blip_color(45); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(50); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(55); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(60); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(65); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(70); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(75); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(80); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(85); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(90); ?>;"></td>
         </tr>
       </table>
       <p>
