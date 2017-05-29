@@ -5,6 +5,19 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
+  <?php
+    function blip_color($min_score) {
+      if($score >= $min_score) {
+        if($score < -15) {
+          echo "#fc291e";
+        } elseif($score > 15) {
+          echo "#1cd600";
+        } else {
+          echo "#fcf820";
+        }
+      }
+    }
+  ?>
   <iframe name="secret_iframe" style="display: none;"></iframe>
   <?php
     $password = $_POST["password"];
@@ -151,6 +164,29 @@
           echo $score;
         ?>
       </h2>
+      <table class="scorebar">
+        <tr>
+          <td class="scoreblip" style="background-color: <?php blip_color(-45); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(-40); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(-35); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(-30); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(-25); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(-20); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(-15); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(-10); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(-5); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(0); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(5); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(10); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(15); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(20); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(25); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(30); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(35); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(40); ?>;"></td>
+          <td class="scoreblip" style="background-color: <?php blip_color(45); ?>;"></td>
+        </tr>
+      </table>
       <p>
         Ditt lösenord är
         <?php
