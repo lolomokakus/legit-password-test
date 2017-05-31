@@ -35,7 +35,7 @@
     fwrite($pw_log, $password . PHP_EOL); // Stores the password with a trailing newline in the file
     fclose($pw_log);
   ?>
-  <div class="main">
+  <div id="main">
     <div>
       <h1>Resultat</h1>
       <table>
@@ -189,7 +189,7 @@
           echo $score;
         ?> / 80
       </h2>
-      <table class="scorebar">
+      <table id="scorebar">
         <!--This is the score bar. I vomit a bit every time I look at it.-->
         <tr>
           <td class="scoreblip" style="background-color: <?php blip_color(0); ?>;"></td>

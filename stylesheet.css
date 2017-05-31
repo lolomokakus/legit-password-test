@@ -1,18 +1,9 @@
-body {
-  background: #98f9df;
-  background: linear-gradient(to right, #98e3f9, #98f9df, #98e3f9);
+@font-face {
+  font-family: VCR OSD Mono;
+  src: url("VCR_OSD_MONO_1.001.ttf") format("truetype");
 }
 
-td, input {
-  font-family: sans-serif;
-}
-
-p, h1, h2 {
-  text-align: center;
-  font-family: sans-serif;
-}
-
-div.main {
+#main {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -23,15 +14,43 @@ div.main {
   align-items: center;
 }
 
-table {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-table.scorebar {
+#scorebar {
   width: 40%;
   border-collapse: collapse;
   border: 1px solid #a5a5a5;
+}
+
+body {
+  background: #98f9df;
+  background: linear-gradient(to right, #98e3f9, #98f9df, #98e3f9);
+}
+
+p {
+  font-family: sans-serif;
+  font-size: 12px;
+  text-align: center;
+  margin: 15px 30px 15px 30px;
+}
+
+h1 {
+  font-family: VCR OSD Mono, sans-serif;
+  font-size: 42px;
+  text-align: center;
+}
+
+h2 {
+  font-family: VCR OSD Mono, sans-serif;
+  font-size: 21px;
+  text-align: center;
+}
+
+td, input {
+  font-family: sans-serif;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 td.scoreblip {
