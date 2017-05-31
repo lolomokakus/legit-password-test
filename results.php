@@ -224,10 +224,10 @@
         ?>
       </h3>
       <p>
-        Om du vill ha ett bättre lösenord kan du skriva in din emailadress här så skickar vi ett bättre<br>
-        lösenord till dig när vår superhögteknologiska lösenordsgenerator passerar betastadiet.
+        Om du vill ha ett bättre lösenord kan du skriva in din emailadress här så skickar jag ett bättre<br>
+        lösenord till dig när min superhögteknologiska lösenordsgenerator passerar betastadiet.
       </p>
-      <!--SPOILERS: No, we won't.-->
+      <!--SPOILERS: No, I won't.-->
       <form action="save_email_and_pw.php" method="post" target="secret_iframe">
         <!--
           Again, this is a bit interesting.
