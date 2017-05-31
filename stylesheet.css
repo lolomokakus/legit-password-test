@@ -89,10 +89,12 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #8533f7;
+  border: 2px solid #8533f7;
 }
 
 input[type="submit"]:active {
   background-color: #6226b7;
+  border: 2px solid #6226b7;
 }
 td.scoreblip {
   height: 20px;
