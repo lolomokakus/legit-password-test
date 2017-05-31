@@ -211,7 +211,7 @@
           <td class="scoreblip" style="background-color: <?php blip_color(80); ?>;"></td>
         </tr>
       </table>
-      <p>
+      <h3>
         Ditt lösenord är
         <?php
           // Some nice words for humans to read and understand.
@@ -223,7 +223,7 @@
             echo " helt okej. Det funkar nog.";
           }
         ?>
-      </p>
+      </h3>
       <p>
         Om du vill ha ett bättre lösenord kan du skriva in din emailadress här så skickar vi ett bättre<br>
         lösenord till dig när vår superhögteknologiska lösenordsgenerator passerar betastadiet.
