@@ -249,6 +249,7 @@
           email address was saved.
         -->
       </form>
+      <p>(Det ser inte ut som att det händer något när man trycker på knappen, men det gör det, jag lovar)</p>
     </div>
   </div>
 </body>
