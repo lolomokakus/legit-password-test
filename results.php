@@ -192,7 +192,6 @@
       <table id="scorebar">
         <!--This is the score bar. I vomit a bit every time I look at it.-->
         <tr>
-          <td class="scoreblip" style="background-color: <?php blip_color(0); ?>;"></td>
           <td class="scoreblip" style="background-color: <?php blip_color(5); ?>;"></td>
           <td class="scoreblip" style="background-color: <?php blip_color(10); ?>;"></td>
           <td class="scoreblip" style="background-color: <?php blip_color(15); ?>;"></td>
