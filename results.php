@@ -18,7 +18,7 @@
           echo "#fcf820";
         }
       } else {
-        echo "#a5a5a5";
+        echo "#353535";
       }
     }
   ?>
