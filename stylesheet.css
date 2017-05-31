@@ -27,6 +27,7 @@ body {
 p {
   font-family: sans-serif;
   font-size: 15px;
+  color: #353535;
   text-align: center;
   margin: 5px 30px 5px 30px;
 }
@@ -34,18 +35,21 @@ p {
 h1 {
   font-family: VCR OSD Mono, sans-serif;
   font-size: 50px;
+  color: #353535;
   text-align: center;
 }
 
 h2 {
   font-family: VCR OSD Mono, sans-serif;
   font-size: 30px;
+  color: #353535;
   text-align: center;
 }
 
 h3 {
   font-family: sans-serif;
   font-size: 15px;
+  color: #353535;
   font-weight: bold;
   text-align: center;
 }
@@ -58,12 +62,23 @@ table {
 td {
   font-family: sans-serif;
   font-size: 15px;
+  color: #353535;
 }
 
 input[type="password"], input[type="email"] {
   background-color: #353535;
   padding: 2px;
-  border: 2px solid #5e5e5e;
+  border: 2px solid #353535;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 15px;
+  color: #e2e2e2;
+}
+
+input[type="submit"] {
+  background-color: #772edd;
+  padding: 2px;
+  border: 2px solid #772edd;
   border-radius: 5px;
   font-family: sans-serif;
   font-size: 15px;
