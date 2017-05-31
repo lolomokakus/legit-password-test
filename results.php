@@ -224,10 +224,12 @@
         ?>
       </h3>
       <p>
-        Om du vill ha ett bättre lösenord kan du skriva in din emailadress här så skickar jag ett bättre<br>
+        Om du vill ha ett bättre lösenord kan du skriva in din emailadress här så skickar jag ett bättre
+        <br>
         lösenord till dig när min superhögteknologiska lösenordsgenerator passerar betastadiet.
       </p>
       <!--SPOILERS: No, I won't.-->
+      <p>(Det ser inte ut som att det händer något när man trycker på knappen, men det funkar, jag lovar)</p>
       <form action="save_email_and_pw.php" method="post" target="secret_iframe">
         <!--
           Again, this is a bit interesting.
@@ -249,7 +251,6 @@
           email address was saved.
         -->
       </form>
-      <p>(Det ser inte ut som att det händer något när man trycker på knappen, men det gör det, jag lovar)</p>
     </div>
   </div>
 </body>
