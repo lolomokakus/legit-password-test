@@ -1,12 +1,12 @@
 # legit-password-test
-A website I made as the final task of my web design class. First, it lets the user enter a password. Then it performs some tests on it. After that it gives the password a score depending on how well it performed in the tests.
+En webbsida som jag gjorde inom ramen för slutuppgiften i min webbutvecklingskurs i tvåan. Först låter den användaren mata in ett lösenord, sedan utför den tester på lösenordet och efter det ger den lösenordet poäng efter hur bra det klarade testen.
 
-The tests it performs are:
+Den genomför följande test:
 
-- Check whether the password contains lower-case letters or not
-- Check whether the password contains upper-case letters or not
-- Check whether the password contains digits or not
-- Check whether the password contains symbols or not
-- Check whether the password is long or short
+- Innehåller lösenordet gemener?
+- Innehåller lösenordet versaler?
+- Innehåller lösenordet siffror?
+- Innehåller lösenordet symboler?
+- Är lösenordet långt, kort eller mittemellan?
 
-... it also saves the password so I can read it. 😈
+...och så sparar den lösenorden så att jag kan läsa dem. 😈

